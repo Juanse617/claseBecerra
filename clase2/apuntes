@@ -1,0 +1,10 @@
+header = encabezado de un documento, parrafo o pagina
+nav = barra de navegacion
+section = 
+article
+aside
+footer = pie de pagina
+div 
+
+section y div son lo mismo la diferencia que div tiene atributos que ahora son etiquetas, en html 5 esos atributos se separan (oreferible usar las demas etiquetas)
+
