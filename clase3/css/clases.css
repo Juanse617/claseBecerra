@@ -1,0 +1,49 @@
+*{
+    margin: 10px;
+}
+
+header{
+    background-color: whitesmoke;
+    height: 200px;
+    width: 100%;
+    margin right: 30px;
+}
+.barra{
+    background: linear-gradient(#22c1c3, #fdbb2d);
+    height: 50px;
+    width: 98%;
+    margin-top: 80px;
+    display: inline-block; list-style-type: bottom;
+}
+.mainLi{
+    background-color: beige;
+    display: inline;
+    padding-bottom: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.secondLi{
+    background-color: aliceblue;
+    display: inline;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.thirdLi{
+    background-color: aliceblue;
+    display: inline;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin: 10px;}
+.fourthLi{
+        background-color: aliceblue;
+        display: inline;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        margin: 10px;}
+.fifthLi{
+            background-color: aliceblue;
+            display: inline;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            margin: 10px;
