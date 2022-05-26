@@ -18,11 +18,53 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title> Datos Personales </title>
+    <script>
+        function validar(e) {
+            e.preventDefault(); //cancela el envio
+            let cedula = document.getElementById("txtCedula");
+            let nombre = document.getElementById("txtnombre");
+            let email = document.getElementById("txtemail")
+            let telefono = document.getElementById("txttelefono");
+            let formulario = document.getElementById("formulario");
+            let valida = false;
+
+
+            if (cedula.value == "") {
+                console.log("el dato cedula esta vacio");
+                valida = true;
+            }
+            if (nombre.value == "") {
+                console.log("el dato nombre esta vacio");
+                valida = true;
+            }
+            if (email.value == "") {
+                console.log("el dato email nombre esta vacio");
+                valida = true;
+            }
+            if (telefono.value == "") {
+                console.log("el dato telefono esta vacio");
+                valida = true;
+            }
+
+            if (valida == false) {
+                formulario.submit();
+            }
+            let exre = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/i;
+            if (exre.test(email.value)) {
+                alert("La dirección de email " + email.value + " es correcta.");
+                valida = true
+            } else {
+                alert("La dirección de email es incorrecta.");
+            }
+        }
+
+
+    </script>
 </head>
 
 <body bgcolor="F7846B" align="center">
     <h1 align="center"> DATOS PERSONALES </h1>
-    <form action="">
+    <form action="" id="formulario">
         <table align="center" border="5" height="60%" width="60%">
             <tr align="center">
                 <td bgcolor="FFFFFF"> TIPO </td>
@@ -30,32 +72,32 @@
             </tr>
             <tr align="center">
                 <td> CEDULA </td>
-                <td> <input type="number" name="ced" id="ced" placeholder="ingrese la cedula"> </td>
+                <td> <input type="number" name="ced" id="txtCedula" placeholder="ingrese la cedula"> </td>
             </tr>
             <tr align="center">
                 <td> NOMBRE</td>
-                <td> <input type="text" name="nomb" id="nomb" placeholder="ingrese el nombre"></td>
+                <td> <input type="text" name="nomb" id="txtnombre" placeholder="ingrese el nombre"></td>
             </tr>
             <tr align="center">
                 <td> TELEFONO </td>
-                <td> <input type="number" name="tel" id="tel" placeholder="ingrese el telefono"></td>
+                <td> <input type="number" name="tel" id="txttelefono" placeholder="ingrese el telefono"></td>
             </tr>
             <tr align="center">
                 <td> EMAIL</td>
-                <td><input type="email" name="email" id="email" placeholder="ingrese el email"></td>
+                <td><input type="email" name="email" id="txtemail" placeholder="ingrese el email"></td>
             </tr>
             <tr align="center">
                 <td> FECHA DE NACIMIENTO</td>
-                <td> <input type="date" name="fecha" id="fecha" placeholder="ingrese la fecha de nacimiento"></td>
+                <td> <input type="date" name="fecha" id="txtfecha" placeholder="ingrese la fecha de nacimiento"></td>
             </tr>
             <tr align="center">
                 <td> COLOR FAVORITO </td>
-                <td> <input type="color" name="color" id="color"></td>
+                <td> <input type="color" name="color" id="txtcolor"></td>
             </tr>
             <tr align="center">
                 <td> PAÍS DE NACIMIENTO </td>
                 <td>
-                    <select name="paises" id="paises">
+                    <select name="paises" id="txtpaises">
                         <option value="1"> VENEZUELA </option>
                         <option value="2"> WAKANDA </option>
                         <option value="3"> COLOMBIA </option>
@@ -65,21 +107,21 @@
             </tr>
             <tr align="center">
                 <td> HOBBYS </td>
-                <td> <input type="checkbox" name="fulvo" id="fulvo"> Fulvo
-                    <input type="checkbox" name="polt" id="polt"> politica
-                    <input type="checkbox" name="bail" id="bail"> bailar
-                    <input type="checkbox" name="pat" id="pat"> patinar
+                <td> <input type="checkbox" name="fulvo" id="txtfulvo"> Fulvo
+                    <input type="checkbox" name="polt" id="txtpolt"> politica
+                    <input type="checkbox" name="bail" id="txtbail"> bailar
+                    <input type="checkbox" name="pat" id="txtpat"> patinar
                 </td>
             </tr>
             <tr align="center">
                 <td> SEXO </td>
                 <td>
-                    <input type="radio" name="radio" id="radio"> MASCULINO
-                    <input type="radio" name="radio" id="radio"> FEMENINO
-                    <input type="radio" name="radio" id="radio"> NO BINARIO
-                    <input type="radio" name="radio" id="radio"> TANQUE SOVIETICO T-34
-                    <input type="radio" name="radio" id="radio"> PIKACHU
-                    <input type="radio" name="radio" id="radio"> AESTHETIC
+                    <input type="radio" name="radio" id="txtradio"> MASCULINO
+                    <input type="radio" name="radio" id="txtradio"> FEMENINO
+                    <input type="radio" name="radio" id="txyradio"> NO BINARIO
+                    <input type="radio" name="radio" id="txyradio"> TANQUE SOVIETICO T-34
+                    <input type="radio" name="radio" id="txyradio"> PIKACHU
+                    <input type="radio" name="radio" id="txyradio"> AESTHETIC
                 </td>
             </tr>
             <tr align="center">
@@ -87,7 +129,7 @@
                 <td> <input type="number" name="edad" id="edad" min="1" max="150" placeholder="ingrese la edad"></td>
             </tr>
         </table>
-        <input type="submit">
+        <input type="submit" onclick="validar(event);">
         <input type="reset">
     </form>
 </body>
